@@ -186,24 +186,23 @@ def delete_grade(connection, student_id, subject_id):
     except pymysql.MySQLError as e:
         print(f"Error: {e}")
 
-# Connection details
 connection = create_connection("localhost", "your_user", "your_password", "HW_DB")
 
 if connection:
     try:
-        # Select all rows from Students
+        # Select Students
         students = read_students(connection)
         print("\nStudents:")
         for student in students:
             print(student)
 
-        # Select all rows from Subjects
+        # Select Subjects
         subjects = read_subjects(connection)
         print("\nSubjects:")
         for subject in subjects:
             print(subject)
 
-        # Select all rows from Grades
+        # Select Grades
         grades = read_grades(connection)
         print("\nGrades:")
         for grade in grades:
